@@ -9,14 +9,17 @@
 	</head>
 	<body>
 		<h1>Detalle de receta</h1>
-		<c:if test="${empty receta }">
-			<p> <c:out value="${mensaje}" /> </p>
+		<c:if test="${not siEsta}">
+			<p>${mensaje}</p>
 		</c:if>
-		<c:if test="${not empty receta}">
-			<p>La receta es: <c:out value="${receta}"></c:out> y sus ingredientes son:</p>
-			<c:forEach var="ingrediente" items="${detalle}">
-				<li>${ingrediente}</li>
-			</c:forEach>
+		<c:if test="${siEsta}">
+			<div class="contenedor">
+				<p>Receta: ${receta}.</p>
+				<p>Ingredientes: </p>
+				<c:forEach var="ingrediente" items="${detalle}">
+					<li>${ingrediente}</li>
+				</c:forEach>
+			</div>
 		</c:if>
 	</body>
 </html>

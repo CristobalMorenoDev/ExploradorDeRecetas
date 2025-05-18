@@ -9,8 +9,10 @@
 	</head>
 	<body>
 		<h1>Lista de recetas</h1>
-		<c:forEach var="receta" items="${listaRecetas}">
-				<li>${receta}</li>
-		</c:forEach>
+		<div class="contenedor">
+			<c:forEach var="receta" items="${listaRecetas}">
+					<li>${receta}</li>
+			</c:forEach>
+		</div>
 	</body>
 </html>

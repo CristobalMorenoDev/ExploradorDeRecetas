@@ -3,9 +3,10 @@ h1{
     color: blue;
 }
 
-p{
-    background-color: black;
-    color: white;
+.contenedor{
+	font-size: 20px;
+    color: black;
+    margin: 10px;
 }
 
 li{

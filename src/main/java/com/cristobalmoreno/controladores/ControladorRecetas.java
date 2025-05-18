@@ -28,15 +28,17 @@ public class ControladorRecetas {
 	
 	@GetMapping("/recetas/{nombre}")
 	public String obtenerRecetaPorNombre(@PathVariable String nombre, Model modelo) {
+		boolean siEsta = false;
 		for (String receta : recetasConIngredientes.keySet()) {
 			if (receta.equalsIgnoreCase(nombre)) {
 		        modelo.addAttribute("receta", receta);
 		        modelo.addAttribute("detalle", recetasConIngredientes.get(receta));
+		        siEsta = true;
 		    } else {
 		        modelo.addAttribute("mensaje", "La receta no se encuentra en nuestra lista.");
 		    }
 		}
-		
+		modelo.addAttribute("siEsta", siEsta);
 		return "detalleReceta.jsp";
 	}
 	
